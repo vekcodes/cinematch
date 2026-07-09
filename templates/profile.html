@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMatch - Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='netflix.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">🎬 CineMatch</h1>
+            <div class="nav-right">
+                <a href="/" class="nav-btn">Home</a>
+                <a href="/logout" class="nav-btn logout-btn">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <section class="profile-section">
+            <h2>👤 My Profile</h2>
+            <div class="profile-info">
+                <p><strong>Username:</strong> {{ user.username }}</p>
+                <p><strong>Email:</strong> {{ user.email }}</p>
+                <p><strong>Movies Rated:</strong> <span id="ratedCount">0</span></p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🎬 My Ratings</h2>
+            <div class="movie-grid" id="ratedMovies"></div>
+        </section>
+    </div>
+
+    <script>
+        let allMovies = {};
+
+        async function loadProfile() {
+            try {
+                const response = await fetch('/api/movies');
+                const movies = await response.json();
+
+                movies.forEach(m => {
+                    allMovies[m.id] = m;
+                });
+
+                displayRatedMovies();
+            } catch (error) {
+                console.error('Error loading movies:', error);
+            }
+        }
+
+        function displayRatedMovies() {
+            const ratedMovies = {{ rated_movies | tojson }};
+            const container = document.getElementById('ratedMovies');
+
+            if (ratedMovies.length === 0) {
+                container.innerHTML = '<p class="empty-msg">You haven\'t rated any movies yet. <a href="/">Go rate movies!</a></p>';
+                return;
+            }
+
+            document.getElementById('ratedCount').textContent = ratedMovies.length;
+
+            container.innerHTML = ratedMovies.map(([movieId, rating]) => {
+                const movie = allMovies[movieId];
+                if (!movie) return '';
+
+                return `
+                    <div class="movie-card">
+                        <div class="movie-poster-container">
+                            <img src="${movie.poster_url || 'https://via.placeholder.com/200x300?text=No+Image'}"
+                                 alt="${movie.title}" class="movie-poster">
+                            <div class="rating-badge">${rating.toFixed(1)}</div>
+                        </div>
+                        <div class="movie-info">
+                            <h3>${movie.title}</h3>
+                            <p class="genres">${movie.genres || 'N/A'}</p>
+                            <div class="stars">
+                                ${'⭐'.repeat(Math.round(rating))}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        loadProfile();
+    </script>
+</body>
+</html>

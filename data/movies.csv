@@ -1,0 +1,51 @@
+id,title,genres,director,cast,overview
+1,Galaxy Horizon,"Sci-Fi,Adventure",Christopher Nolan,"Matthew McConaughey,Anne Hathaway",Explorers venture into a black hole
+2,Midnight Echo,"Thriller,Mystery",David Fincher,"Rami Malek,Cate Blanchett",A detective chases a cryptic serial killer
+3,Autumn Leaves,"Drama,Romance",Greta Gerwig,"Timothée Chalamet,Saoirse Ronan",Two strangers meet in a small town
+4,Code Red,"Action,Sci-Fi",Denis Villeneuve,"Tom Hardy,Oscar Isaac",Special ops team races to stop a cyberattack
+5,Neon Dreams,"Drama,Music",Barry Jenkins,"Childish Gambino,Zendaya",A producer chases musical stardom
+6,Silent Witness,"Crime,Drama",Martin Scorsese,"Leonardo DiCaprio,Al Pacino",Mob witness enters protection program
+7,Castle in the Sky,"Fantasy,Adventure",Hayao Miyazaki,"Anne Hathaway,Joseph Gordon-Levitt",Children discover a floating island
+8,Red Canyon,"Western,Drama",Quentin Tarantino,"Brad Pitt,Christoph Waltz",Outlaws hunted across the desert
+9,Last Light,"Sci-Fi,Horror",Alex Garland,"Domhnall Gleeson,Ava DuVernay",Humanity's final space mission fails
+10,Ocean Blue,"Adventure,Drama",Werner Herzog,"Oscar Isaac,Tilda Swinton",Submarine crew discovers underwater city
+11,Iron Heart,"Action,Drama",John Wick director,"Keanu Reeves,Charlize Theron",Retired soldier pulled back into action
+12,Whisper Room,"Thriller,Horror",Ari Aster,"Florence Pugh,Jack Reynor",Guests trapped in haunted mansion
+13,Cold Case,"Mystery,Crime",Denis Villeneuve,"Jake Gyllenhaal,Meryl Streep",Detective reopens a 20-year-old murder
+14,Fire and Ice,"Fantasy,Romance",Peter Jackson,"Timothée Chalamet,Florence Pugh",Two kingdoms at war discover love
+15,Echoes of Tomorrow,"Sci-Fi,Drama",Christopher Nolan,Tenet cast reunion,Time-traveling agent saves the world
+16,Shadow Play,"Thriller,Drama",Ari Aster,"Saoirse Ronan,Dev Patel",Photographer uncovers dark conspiracy
+17,Golden Hour,"Drama,Romance",Greta Gerwig,"Saoirse Ronan,Timothée Chalamet",Artist and musician fall in love
+18,Danger Zone,"Action,Thriller",Chad Stahelski,"Charlize Theron,Tom Cruise",Spies on international heist
+19,Forgotten Path,"Drama,Fantasy",Guillermo del Toro,"Benedict Cumberbatch,Emma Stone",A man discovers his mysterious past
+20,Last Stand,"Action,Western",Taika Waititi,"Oscar Isaac,Chris Hemsworth",Cowboys defend small town
+21,Midnight City,"Crime,Drama",Michael Mann,"Al Pacino,Robert De Niro",Cop and criminal cat-and-mouse game
+22,Storm Rising,"Action,Adventure",Kathryn Bigelow,"Charlize Theron,Oscar Isaac",Pilot survives impossible hurricane
+23,Whispers in Dark,"Horror,Thriller",Ari Aster,"Florence Pugh,Jack Reynor",Family haunted by malevolent spirit
+24,Sunset Boulevard,"Drama,Crime",Martin Scorsese,"Leonardo DiCaprio,Margot Robbie",Wealthy con artist meets his match
+25,Rise of Legends,"Fantasy,Adventure",Peter Jackson,"Henry Cavill,Cate Blanchett",Warriors unite against dark forces
+26,Blue Horizon,"Sci-Fi,Adventure",Denis Villeneuve,"Oscar Isaac,Zendaya",Space colonists explore alien world
+27,Dark Mirror,"Thriller,Sci-Fi",Alex Garland,"Domhnall Gleeson,Ava DuVernay",AI becomes sentient and dangerous
+28,Crimson Trail,"Western,Action",Quentin Tarantino,"Brad Pitt,Samuel L. Jackson",Bounty hunters on collision course
+29,Heart of Steel,"Drama,Action",Christopher Nolan,"Christian Bale,Marion Cotillard",Industrial revolution spy thriller
+30,Lost Island,"Adventure,Fantasy",Werner Herzog,"Oscar Isaac,Tilda Swinton",Explorers shipwrecked on mysterious island
+31,Neural Link,"Sci-Fi,Thriller",Alex Garland,"Alicia Vikander,Domhnall Gleeson",Human consciousness uploaded to network
+32,Summer of '77,"Drama,Music",Barry Jenkins,"Timothée Chalamet,Florence Pugh",Young musicians discover themselves
+33,Clockwork Angel,"Fantasy,Adventure",Guillermo del Toro,"Benedict Cumberbatch,Tilda Swinton",Steampunk world on brink of revolution
+34,Frost Bite,"Horror,Thriller",Ari Aster,"Florence Pugh,Oscar Isaac",Research team in arctic finds something
+35,Velocity,"Action,Sci-Fi",Chad Stahelski,"Tom Cruise,Oscar Isaac",Racer hijacked for dangerous heist
+36,Echo Protocol,"Thriller,Sci-Fi",Denis Villeneuve,"Jake Gyllenhaal,Zendaya",Secret government experiment exposed
+37,Dancing Shadows,"Drama,Romance",Greta Gerwig,"Saoirse Ronan,Dev Patel",Dancers pursue their dreams
+38,Venom Strike,"Action,Thriller",John Wick director,"Keanu Reeves,Oscar Isaac",Black ops team hunts terrorist
+39,Ancient Curse,"Horror,Fantasy",Guillermo del Toro,"Benedict Cumberbatch,Emma Stone",Archaeologist awakens ancient evil
+40,Thunder Road,"Drama,Crime",Michael Mann,"Oscar Isaac,Matthew McConaughey",Smuggler turned informant
+41,Frozen Heart,"Drama,Romance",Barry Jenkins,"Timothée Chalamet,Saoirse Ronan",Couple surviving arctic expedition
+42,Savage Lands,"Action,Western",Taika Waititi,"Oscar Isaac,Henry Cavill",Frontier justice in wild west
+43,Terminal Velocity,"Action,Sci-Fi",Kathryn Bigelow,"Charlize Theron,Tom Hardy",Pilot in zero-gravity dogfight
+44,Sacred Ground,"Drama,Fantasy",Werner Herzog,"Oscar Isaac,Tilda Swinton",Mystical journey through ancient lands
+45,Vortex,"Sci-Fi,Thriller",Christopher Nolan,"Matthew McConaughey,Anne Hathaway",Gravitational anomaly threatens Earth
+46,Silent Night,"Thriller,Crime",David Fincher,"Rami Malek,Cate Blanchett",Serial killer strikes on Christmas
+47,Midnight Requiem,"Drama,Music",Barry Jenkins,"Oscar Isaac,Florence Pugh",Jazz musician's final performance
+48,Crimson Skies,"Action,Adventure",Kathryn Bigelow,"Oscar Isaac,Charlize Theron",Aerial dogfights over war zone
+49,Beyond the Stars,"Sci-Fi,Drama",Denis Villeneuve,"Oscar Isaac,Zendaya",Stranded astronauts find home planet
+50,Void,"Horror,Sci-Fi",Alex Garland,"Ava DuVernay,Domhnall Gleeson",Deep space station loses oxygen
