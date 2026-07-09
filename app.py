@@ -29,11 +29,15 @@ recommenders = {}
 def load_user(user_id):
     return User.query.get(int(user_id))
 
+def init_db():
+    with app.app_context():
+        db.create_all()
+        print("✅ Database tables initialized")
+
 @app.before_request
 def initialize():
     global recommenders
     with app.app_context():
-        db.create_all()
         if not recommenders:
             build_recommenders()
 
@@ -214,33 +218,46 @@ def get_tmdb_details(tmdb_id):
 @app.route('/api/movies', methods=['POST'])
 @login_required
 def add_movie():
-    data = request.json
+    try:
+        data = request.json
 
-    existing = Movie.query.filter_by(tmdb_id=data.get('tmdb_id')).first()
-    if existing:
-        return jsonify({'error': 'Movie already in database'}), 400
+        if not data or 'title' not in data:
+            return jsonify({'error': 'Title is required'}), 400
 
-    movie = Movie(
-        title=data['title'],
-        genres=data.get('genres', ''),
-        director=data.get('director', ''),
-        cast=data.get('cast', ''),
-        overview=data.get('overview', ''),
-        poster_url=data.get('poster_url', ''),
-        tmdb_id=data.get('tmdb_id'),
-        release_date=data.get('release_date', ''),
-        added_by=current_user.id
-    )
+        # Check for duplicates by title (more practical than tmdb_id)
+        existing = Movie.query.filter_by(title=data.get('title')).first()
+        if existing:
+            return jsonify({'error': f'Movie "{data["title"]}" already in database'}), 400
 
-    db.session.add(movie)
-    db.session.commit()
+        movie = Movie(
+            title=data['title'],
+            genres=data.get('genres', ''),
+            director=data.get('director', ''),
+            cast=data.get('cast', ''),
+            overview=data.get('overview', ''),
+            poster_url=data.get('poster_url', ''),
+            tmdb_id=data.get('tmdb_id'),
+            release_date=data.get('release_date', ''),
+            added_by=current_user.id
+        )
 
-    build_recommenders()
+        db.session.add(movie)
+        db.session.commit()
 
-    return jsonify({
-        'id': movie.id,
-        'message': 'Movie added successfully'
-    }), 201
+        print(f"✅ Movie added: {movie.title} (ID: {movie.id})")
+
+        build_recommenders()
+
+        return jsonify({
+            'id': movie.id,
+            'title': movie.title,
+            'message': 'Movie added successfully'
+        }), 201
+
+    except Exception as e:
+        db.session.rollback()
+        print(f"❌ Error adding movie: {str(e)}")
+        return jsonify({'error': f'Server error: {str(e)}'}), 500
 
 @app.route('/api/rate', methods=['POST'])
 @login_required
@@ -334,6 +351,5 @@ def recommend():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
+    init_db()
     app.run(debug=True, port=5000)

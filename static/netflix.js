@@ -134,8 +134,10 @@ async function addMovieManual() {
             })
         });
 
+        const data = await response.json();
+
         if (response.ok) {
-            alert('Movie added successfully!');
+            alert('✅ Movie added successfully!');
             closeAddMovieModal();
             await loadMovies();
             document.getElementById('manualTitle').value = '';
@@ -144,10 +146,13 @@ async function addMovieManual() {
             document.getElementById('manualCast').value = '';
             document.getElementById('manualOverview').value = '';
             document.getElementById('manualPosterUrl').value = '';
+        } else {
+            console.error('API Error:', data);
+            alert('❌ Error: ' + (data.error || 'Failed to add movie'));
         }
     } catch (error) {
         console.error('Error adding movie:', error);
-        alert('Failed to add movie');
+        alert('❌ Network error: ' + error.message);
     }
 }
 
